@@ -1,0 +1,1 @@
+Player(string str, int i){	This->userName = str;	This->experiencePts = i;}

@@ -1,0 +1,1 @@
+#ifndef PLAYER_H#define PLAYER_HClass Player {Private:	String username;	Int experiencePts;Public:	Player(string, int);	Player();	String getUserName ()const;	Int getXP()const;	Void setUserName(string);	Void updateXP(int);	Void resetXP(int);}#endif

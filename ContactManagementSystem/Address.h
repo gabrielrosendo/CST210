@@ -17,7 +17,7 @@ class Address{
         string getStreetAddress()const;
         string getCity()const;
         string getState()const;
-        string getZip() const;
+        string getZip()const;
 
         friend istream& operator>>(istream& in, Address& );
         friend ostream &operator<<(ostream &o, const Address &);
