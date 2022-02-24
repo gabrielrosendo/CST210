@@ -21,6 +21,10 @@ class Animal {
         void setHeight(double);
         void eat();
         void gainWeight();
+
+        friend class Horse;
+        friend class Cow;
+        friend class Chicken;
 };
 
 

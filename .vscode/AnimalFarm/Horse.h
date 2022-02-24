@@ -6,7 +6,7 @@
 
 class Horse : public Animal {
     public:
-        Horse(){}
+        Horse();
         Horse(string, double, double);
         void eat();
         void gainWeight();

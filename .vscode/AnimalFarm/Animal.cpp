@@ -7,9 +7,9 @@ Animal::Animal()
     this->height = 0;
 }
 
-Animal::Animal(string name, double weight, double height)
+Animal::Animal(string str, double weight, double height)
 {
-    this->name = name;
+    this->name = str;
     this->weight = weight;
     this->height = height;
 }
@@ -31,7 +31,7 @@ double Animal::getHeight() const
 
 void Animal::setName(string str)
 {
-    this->name = name;
+    this->name = str;
 }
 
 void Animal::setWeight(double dbl)
@@ -39,9 +39,9 @@ void Animal::setWeight(double dbl)
     this->weight = dbl;
 }
 
-void Animal::setHeight(double dbl)
+void Animal::setHeight(double dble)
 {
-    this->height = dbl;
+    this->height = dble;
 }
 
 void Animal::eat()
