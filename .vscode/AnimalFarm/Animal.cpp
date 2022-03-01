@@ -52,7 +52,6 @@ void Animal::eat()
 
 void Animal::gainWeight()
 {
-
     cout << name << " gained 4 pounds" << endl;
     weight += 4;
     cout << name << " now weights " << weight << endl;

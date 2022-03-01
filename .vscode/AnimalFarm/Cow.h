@@ -20,7 +20,7 @@ void Cow::eat() {
 void Cow::gainWeight() {
     cout << getName() << " gained 6 pounds." << endl;
     weight += 6;
-    cout << getName << " now weights " << getWeight() << endl;
+    cout << getName() << " now weights " << getWeight() << endl;
 }
 
 #endif

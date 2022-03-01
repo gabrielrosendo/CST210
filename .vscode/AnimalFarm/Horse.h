@@ -13,14 +13,14 @@ class Horse : public Animal {
 };
 
 void Horse::eat() {
-    cout << getName() << "the Horse is eating" << endl;
+    cout << getName() << " the Horse is eating" << endl;
     gainWeight();
 }
 
 void Horse::gainWeight() {
     cout << getName() << " gained 4 pounds." << endl;
     weight += 4;
-    cout << getName << " now weights " << getWeight() << endl;
+    cout << getName() << " now weights " << getWeight() << endl;
 }
 
 #endif

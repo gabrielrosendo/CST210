@@ -22,7 +22,6 @@ class Animal {
         void setName(string);
         void setHeight(double);
         void eat();
-
 };
 
 
