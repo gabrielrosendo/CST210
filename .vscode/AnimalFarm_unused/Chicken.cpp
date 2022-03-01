@@ -17,13 +17,5 @@ Chicken::Chicken(string str, double weight, double height)
 
 void Chicken::eat()
 {
-    cout << name << " the Chicken is eating" << endl;
-    gainWeight();
-}
-
-void Chicken::gainWeight()
-{
-    cout << name << " gained 0.25 pounds." << endl;
-    weight += 0.25;
-    cout << name << " now weights " << weight << endl;
+    Animal::eat();
 }

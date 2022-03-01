@@ -1,7 +1,7 @@
 #include "Animal.cpp"
-#include "Horse.cpp"
-#include "Chicken.cpp"
-#include "Cow.cpp"
+#include "Horse.h"
+#include "Chicken.h"
+#include "Cow.h"
 
 int main()
 {

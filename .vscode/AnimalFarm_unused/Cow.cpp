@@ -24,6 +24,7 @@ void Cow::eat()
 void Cow::gainWeight()
 {
     cout << name << " gained 6 pounds." << endl;
-    weight += 6;
-    cout << name << " now weights " << weight << endl;
+    int wei = getWeight();
+    setWeight(wei);
+    cout << name << " now weights " << getWeight() << endl;
 }

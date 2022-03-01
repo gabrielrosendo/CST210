@@ -46,9 +46,14 @@ void Animal::setHeight(double dble)
 
 void Animal::eat()
 {
+    cout << name << " is eating" << endl;
+    gainWeight();
 }
 
 void Animal::gainWeight()
 {
 
+    cout << name << " gained 4 pounds" << endl;
+    weight += 4;
+    cout << name << " now weights " << weight << endl;
 }

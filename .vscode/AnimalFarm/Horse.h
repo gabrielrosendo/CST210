@@ -6,10 +6,21 @@
 
 class Horse : public Animal {
     public:
-        Horse();
-        Horse(string, double, double);
+        Horse() : Animal () {}
+        Horse(string name, double weight, double height) : Animal (name, weight, height) {}
         void eat();
         void gainWeight();
 };
+
+void Horse::eat() {
+    cout << getName() << "the Horse is eating" << endl;
+    gainWeight();
+}
+
+void Horse::gainWeight() {
+    cout << getName() << " gained 4 pounds." << endl;
+    weight += 4;
+    cout << getName << " now weights " << getWeight() << endl;
+}
 
 #endif

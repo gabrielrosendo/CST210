@@ -6,10 +6,12 @@
 using namespace std;
 
 class Animal {
-    private:
+    protected:
         double weight;
         string name;
         double height;
+    private:
+        void gainWeight();
     public:
         Animal();    
         Animal(string, double, double);
@@ -20,11 +22,7 @@ class Animal {
         void setName(string);
         void setHeight(double);
         void eat();
-        void gainWeight();
 
-        friend class Horse;
-        friend class Cow;
-        friend class Chicken;
 };
 
 
