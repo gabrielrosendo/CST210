@@ -13,7 +13,7 @@ class Chicken : public Animal {
 };
 
 void Chicken::eat() {
-    cout << getName() << "the Chicken is eating" << endl;
+    cout << getName() << " the Chicken is eating" << endl;
     gainWeight();
 }
 
