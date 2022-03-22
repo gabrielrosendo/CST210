@@ -16,6 +16,8 @@ class Animal {
         Animal();    
         Animal(string, double, double);
         void eat();
+        void speak();
+        double getTopWeight();
         string getName()const;
         double getWeight()const;
         double getHeight()const;

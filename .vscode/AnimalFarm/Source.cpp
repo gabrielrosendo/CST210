@@ -8,10 +8,9 @@ int main()
 {
     // create object of the barn class
     Barn b;
+    b.showAll();
     // feed animals
-    b.feedCows();
-    b.feedChickens();
-    b.feedHorses();
+    b.feedAnimals();
 
     return 0;
 }

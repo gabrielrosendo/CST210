@@ -11,76 +11,56 @@
 class Barn
 {
 private:
-    Animal *arr = new Animal[15];
-    vector<Chicken> coop;
-    vector<Horse> stalls;
-    vector<Cow> pen;
+    Animal* myAnimals[15];
     int numAnimals;
-
 public:
     Barn();
-    void feedChickens();
-    void feedHorses();
-    void feedCows();
+    void feedAnimals();
+    void showAll();
+    void outToPasture(int);
 };
 
 Barn::Barn()
 {
+    numAnimals = 0;
     // create objects of class horse
-    Horse harry("Harry", 1700, 4);
-    Horse tom("Tom", 1600, 3.5);
-    Horse alex("Alex", 1450, 3);
-    stalls.push_back(harry);
-    stalls.push_back(tom);
-    stalls.push_back(alex);
+    myAnimals[numAnimals++] = new Horse("Harry", 1700, 4);
+    myAnimals[numAnimals++] = new Horse("Tom", 1600, 3.5);
+    myAnimals[numAnimals++] = new Horse("Alex", 1450, 3);
 
     // create objects of class chicken
-    Chicken prissy("Prissy", 12, 1);
-    Chicken lucille("Lucille", 14, 1);
-    Chicken yetta("Yetta", 8, 1);
-    Chicken louise("Louise", 9, 1);
-    coop.push_back(prissy);
-    coop.push_back(lucille);
-    coop.push_back(yetta);
-    coop.push_back(louise);
+    myAnimals[numAnimals++] = new Chicken("Prissy", 12, 1);
+    myAnimals[numAnimals++] = new Chicken("Lucille", 14, 1);
+    myAnimals[numAnimals++] = new Chicken("Yetta", 8, 1);
+    myAnimals[numAnimals++] = new Chicken("Louise", 9, 1);
 
     // create objects of class cow
-    Cow betsy("Betsy", 2200, 4);
-    Cow dixie("Dixie", 2200, 4);
-    pen.push_back(betsy);
-    pen.push_back(dixie);
+    myAnimals[numAnimals++] = new Cow("Betsy", 2200, 4);
+    myAnimals[numAnimals++] = new Cow("Dixie", 2200, 4);
 }
 
-void Barn::feedCows()
+void Barn::feedAnimals()
 {
-    cout << "Feeding the cows" << endl;
+    cout << "Feeding the animals" << endl;
     // loop through all cows in pen
-    for (int i = 0; i < pen.size(); i++)
+    for (int i = 0; i < numAnimals; i++)
     {
-        pen[i].eat();
+        myAnimals[i]->eat();
+        if (myAnimals[i]->getTopWeight() < myAnimals[i]->getWeight()){
+            outToPasture(i);
+        }
         cout << "\n";
     }
 }
 
-void Barn::feedChickens()
-{
-    cout << "Feeding the chickens" << endl;
-    // loop through all chickens in coop
-    for (int i = 0; i < coop.size(); i++)
-    {
-        coop[i].eat();
-        cout << "\n";
-    }
+void Barn::outToPasture(int i) {
+    delete myAnimals[i];
+    cout << myAnimals[i]->getName() << ", the (...) is out to pasture" << endl;
+    myAnimals[i] = 
 }
 
-void Barn::feedHorses()
-{
-    cout << "Feeding the horses" << endl;
-    // loop through all horses in stall
-    for (int i = 0; i < stalls.size(); i++)
-    {
-        stalls[i].eat();
-        cout << "\n";
-    }
+void Barn::showAll() {
+
 }
+
 #endif
