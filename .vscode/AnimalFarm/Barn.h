@@ -11,6 +11,7 @@
 class Barn
 {
 private:
+    Animal *arr = new Animal[15];
     vector<Chicken> coop;
     vector<Horse> stalls;
     vector<Cow> pen;
@@ -25,6 +26,7 @@ public:
 
 Barn::Barn()
 {
+    // create objects of class horse
     Horse harry("Harry", 1700, 4);
     Horse tom("Tom", 1600, 3.5);
     Horse alex("Alex", 1450, 3);
@@ -32,6 +34,7 @@ Barn::Barn()
     stalls.push_back(tom);
     stalls.push_back(alex);
 
+    // create objects of class chicken
     Chicken prissy("Prissy", 12, 1);
     Chicken lucille("Lucille", 14, 1);
     Chicken yetta("Yetta", 8, 1);
@@ -41,6 +44,7 @@ Barn::Barn()
     coop.push_back(yetta);
     coop.push_back(louise);
 
+    // create objects of class cow
     Cow betsy("Betsy", 2200, 4);
     Cow dixie("Dixie", 2200, 4);
     pen.push_back(betsy);
@@ -50,6 +54,7 @@ Barn::Barn()
 void Barn::feedCows()
 {
     cout << "Feeding the cows" << endl;
+    // loop through all cows in pen
     for (int i = 0; i < pen.size(); i++)
     {
         pen[i].eat();
@@ -60,6 +65,7 @@ void Barn::feedCows()
 void Barn::feedChickens()
 {
     cout << "Feeding the chickens" << endl;
+    // loop through all chickens in coop
     for (int i = 0; i < coop.size(); i++)
     {
         coop[i].eat();
@@ -70,6 +76,7 @@ void Barn::feedChickens()
 void Barn::feedHorses()
 {
     cout << "Feeding the horses" << endl;
+    // loop through all horses in stall
     for (int i = 0; i < stalls.size(); i++)
     {
         stalls[i].eat();

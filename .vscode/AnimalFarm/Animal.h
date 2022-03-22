@@ -15,13 +15,13 @@ class Animal {
     public:
         Animal();    
         Animal(string, double, double);
+        void eat();
         string getName()const;
         double getWeight()const;
         double getHeight()const;
         void setWeight(double);
         void setName(string);
         void setHeight(double);
-        void eat();
 };
 
 

@@ -1,0 +1,1 @@
+Class B {Private:	Int value4;Public:	B();	B(int);	B(int, int);	Int getBValue() const;	Void setBValue(int);}
