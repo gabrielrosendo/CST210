@@ -14,6 +14,10 @@ Animal::Animal(string str, double weight, double height)
     this->height = height;
 }
 
+double Animal::getTopWeight() {
+    return 5000;
+}
+
 string Animal::getName() const
 {
     return this->name;

@@ -9,7 +9,7 @@ class Horse : public Animal
 public:
     Horse() : Animal() {}
     Horse(string name, double weight, double height) : Animal(name, weight, height) {}
-    void eat();
+    virtual void eat();
     void speak();
     void gainWeight();
     double getTopWeight();

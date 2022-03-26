@@ -42,7 +42,7 @@ Barn::Barn()
 void Barn::feedAnimals()
 {
     cout << "Feeding the animals" << endl;
-    // loop through all cows in pen
+    // loop through all animals
     for (int i = 0; i < numAnimals; i++)
     {
         myAnimals[i]->eat();
@@ -55,12 +55,16 @@ void Barn::feedAnimals()
 
 void Barn::outToPasture(int i) {
     delete myAnimals[i];
-    cout << myAnimals[i]->getName() << ", the (...) is out to pasture" << endl;
-    myAnimals[i] = 
+    cout << myAnimals[i]->getName() << " the " << typeid(myAnimals[i]).name() << " is out to pasture" << endl;
+    // myAnimals[i] = 
 }
 
 void Barn::showAll() {
-
-}
+    for (int i = 0; i < numAnimals; i++)
+    {
+        cout << myAnimals[i]->getName() << " the " << typeid(*myAnimals[i]).name() << endl;
+    }
+    cout << "\n";
+    }
 
 #endif
