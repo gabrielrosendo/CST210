@@ -53,6 +53,12 @@ void Barn::feedAnimals()
     }
 }
 
+//Barn::~Barn() {
+  //  for (int i = 0; i < numAnimals; i++){
+    //    delete myAnimals[i];
+    //}
+//}
+
 void Barn::outToPasture(int i) {
     delete myAnimals[i];
     cout << myAnimals[i]->getName() << " the " << typeid(myAnimals[i]).name() << " is out to pasture" << endl;
