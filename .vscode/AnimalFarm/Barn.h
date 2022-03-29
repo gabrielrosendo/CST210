@@ -60,15 +60,29 @@ void Barn::feedAnimals()
 //}
 
 void Barn::outToPasture(int i) {
-    delete myAnimals[i];
-    cout << myAnimals[i]->getName() << " the " << typeid(myAnimals[i]).name() << " is out to pasture" << endl;
-    // myAnimals[i] = 
-}
+    //delete myAnimals[i];
+    cout << myAnimals[i]->getName() << " the " << myAnimals[i]->getSpecies(typeid(*myAnimals[i]).name()) << " is out to pasture" << endl;
+    if (myAnimals[i]->getSpecies(typeid(*myAnimals[i]).name()) == "Chicken") {
+        cout << myAnimals[i]->getName() << " replaced with ";
+        myAnimals[i] = new Chicken("Ross", 9, 1);
+        cout << myAnimals[i]->getName() << endl;
+    }
+    else if (myAnimals[i]->getSpecies(typeid(*myAnimals[i]).name()) == "Cow") {
+        cout << myAnimals[i]->getName() << " replaced with ";
+        myAnimals[i] = new Cow("Beth", 2200, 4);
+        cout << myAnimals[i]->getName() << endl;
+    }
+    else {
+        cout << myAnimals[i]->getName() << " replaced with ";
+        myAnimals[i] = new Horse("Clark", 1500, 4);
+        cout << myAnimals[i]->getName() << endl;
+    }
+    }
 
 void Barn::showAll() {
     for (int i = 0; i < numAnimals; i++)
     {
-        cout << myAnimals[i]->getName() << " the " << typeid(*myAnimals[i]).name() << endl;
+        cout << myAnimals[i]->getName() << " the " << myAnimals[i]->getSpecies(typeid(*myAnimals[i]).name()) << endl;
     }
     cout << "\n";
     }

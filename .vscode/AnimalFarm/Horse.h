@@ -15,7 +15,7 @@ public:
     double getTopWeight();
 };
 
-double getTopWeight() {
+double Horse::getTopWeight() {
     return 2200;
 }
 

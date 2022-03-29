@@ -15,15 +15,17 @@ class Animal {
     public:
         Animal();    
         Animal(string, double, double);
-        void eat();
+        virtual void eat();
         void speak();
-        double getTopWeight();
+        virtual double getTopWeight();
         string getName()const;
         double getWeight()const;
         double getHeight()const;
         void setWeight(double);
         void setName(string);
         void setHeight(double);
+        string getSpecies(string);
+        virtual ~Animal(){}
 };
 
 

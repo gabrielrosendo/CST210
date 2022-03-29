@@ -23,6 +23,11 @@ string Animal::getName() const
     return this->name;
 }
 
+string Animal::getSpecies(string str) {
+    str.erase(0,1);
+    return str;
+}
+
 double Animal::getWeight() const
 {
     return this->weight;
@@ -60,3 +65,4 @@ void Animal::gainWeight()
     weight += 4;
     cout << name << " now weights " << weight << endl;
 }
+
