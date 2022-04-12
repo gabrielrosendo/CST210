@@ -2,7 +2,6 @@
 #define CHARACTER_H
 
 #include "Weapon.h"
-#include "Potion.h"
 
 class Character {
 private:
