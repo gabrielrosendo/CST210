@@ -28,6 +28,11 @@ Character::Character(std::string str)
     this->hp = 100;
 }
 
+Character::~Character()
+{
+    delete this;
+}
+
 void Character::increaseHp(int i) {
     hp += i;
 }
@@ -37,7 +42,7 @@ const int Character::getHp() {
 }
 
 const void Character::showCharacter() {
-    std::cout << "Character" << this->name << " is equipped with a " << this->weapon.getName() << " and currently has " << this->hp << " Health Points" << std::endl;
+    std::cout << "Hero " << this->name << " is equipped with a " << this->weapon.getName() << " and currently has " << this->hp << " Health Points" << std::endl;
 }
 
 void Character::takeDamage(int i) {
