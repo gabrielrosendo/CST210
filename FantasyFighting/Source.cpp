@@ -1,5 +1,6 @@
 #include "Character.h"
 #include "Store.h"
+#include "Arena.h"
 
 using namespace std;
 
@@ -14,7 +15,7 @@ int main() {
     std::cin >> num;
     if (num == 2) {
         cout << "In progress";
-        // read txt file
+        // read txt file 
     }
     if (num == 1) {
         string nm;
@@ -25,7 +26,7 @@ int main() {
     }
     while(on) {
         num = 0;
-        cout<< "\n";
+        cout<< "\n**************\n";
         cout << "| MAIN MENU |"<<endl;
         cout << "Welcome, ";
         cout << hero->getName() << endl;
@@ -35,15 +36,24 @@ int main() {
         cout << " | SAVE GAME | 4 "<< endl;
         std::cin >> num;
         if (num == 1){
-            cout<<"In progress";
+            Arena* arenaPtr= new Arena(hero);
+            Character* villain = arenaPtr->getNextOponent(hero->level);
+            villain->showVillain();
         }
         if (num == 2) {
             Weapon wp = str.Shop();
             hero->addWeapon(wp);
         }
         if(num == 3) {
-            hero->showCharacter();
+            hero->showHero();
         }
+        int i;
+        cout<<"/nPRESS 1 TO GO BACK TO THE MAIN MENU: ";
+        cin>>i;
+        if(i!=1){
+            on = false;
+        }
+
     }
     
 } 
