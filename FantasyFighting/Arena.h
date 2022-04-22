@@ -27,14 +27,16 @@ Arena::Arena(Character *myHero)
     cout << "Welcome to the Arena!" << endl;
     cout << "You are at level ";
     cout << myHero->level;
-    cout << " out of 10" << endl;
+    cout << " out of 6" << endl;
 }
 
 void Arena::fight(Character *hero, Villain *villain)
 {
     int bonus = 0;
+    // get hp of both
     int hrHp = hero->getHp();
     int vlHp = villain->getHpVl();
+    // while they are both alive
     while (hrHp > 0 && vlHp > 0)
     {
         cout << "ATTACKING " << villain->getNameVl() << " WITH A " << hero->getWeapon()<<endl;
@@ -46,9 +48,9 @@ void Arena::fight(Character *hero, Villain *villain)
         if(vlHp <= 0){
             cout<< hero->getName() << " WON!"<<endl;
             hero->level+=1;
-            // bonus based on how many rounds
+            // bonus gold based on how many rounds were fought
             hero->gold+=20 + bonus*2;
-            cout<<"YOU'VE GAINED "<< 20 + bonus*2<<endl<< " GOLD";
+            cout<<"YOU'VE GAINED "<< 20 + bonus*2<< " GOLD"<<endl;
             break;
         }
         cout<< villain->getNameVl()<< " is attacking you with a "<< villain->getWeaponVl()<<endl;
@@ -65,6 +67,7 @@ void Arena::fight(Character *hero, Villain *villain)
     }
 }
 
+// return pointer to next oponent
 Villain *Arena::getNextOponent(int level)
 {
     cout << " || LEVEL " << level << " || ";
@@ -88,7 +91,7 @@ Villain *Arena::getNextOponent(int level)
     }
     if (level == 4)
     {
-        Villain *n4 = new Villain("GOLEN");
+        Villain *n4 = new Villain("GOLEM");
         n4->addWeaponVl(*new Weapon("HEAVY PUNCH", 28));
         return n4;
     }
@@ -96,6 +99,12 @@ Villain *Arena::getNextOponent(int level)
     {
         Villain *n5 = new Villain("BLACK DRAGON");
         n5->addWeaponVl(*new Weapon("BLACK MAGIC", 30));
+        return n5;
+    }
+    if (level == 6)
+    {
+        Villain *n5 = new Villain("FINAL BOSS - DARK KNIGHT");
+        n5->addWeaponVl(*new Weapon("DIAMOND SWORD", 35));
         return n5;
     }
     return 0;

@@ -1,0 +1,1 @@
+This program takes input from a file to load a saved game and can also output new info to the file when saving a new game.

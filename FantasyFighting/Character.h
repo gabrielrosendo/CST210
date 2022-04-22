@@ -15,7 +15,6 @@ public:
     int level;
     int gold;
     Character(std::string);
-    ~Character();
     void setName(std::string);
     std::string getName();
     void addWeapon(const Weapon &);
@@ -31,6 +30,7 @@ public:
 
 Character::Character(std::string str)
 {
+    // create character
     setName(str);
     this->gold = 50;
     this->hp = 100;
@@ -40,11 +40,6 @@ Character::Character(std::string str)
 
 void Character::create() {
     std::cout<<"Character created"<<std::endl;
-}
-
-Character::~Character()
-{
-    delete this;
 }
 
 std::string Character::getWeapon()

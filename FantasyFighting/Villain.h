@@ -10,7 +10,6 @@ private:
     Weapon weapon;
     int hp;
     std::string name;
-
 public:
     Villain() {}
     Villain(std::string);

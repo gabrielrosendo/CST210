@@ -1,7 +1,6 @@
 #ifndef WEAPON_H
 #define WEAPON_H
 
-#include "Asset.h"
 #include "Character.h"
 #include <iostream>
 
@@ -33,8 +32,6 @@ public:
 int Weapon::getPower() {
     return this->power;
 }
-
-
 
 int Weapon::getCost(){
     return this->cost;
