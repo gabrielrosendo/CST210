@@ -1,62 +1,104 @@
 #ifndef ARENA_H
 #define ARENA_H
+#ifdef _WIN32
+#include <Windows.h>
+#else
+#include <unistd.h>
+#endif
 
 #include "Character.h"
+#include "Villain.h"
 using namespace std;
-
 
 class Arena
 {
 private:
-    Character* hero;
-    Character* villain;
+    Character *hero;
+    Character *villain;
 public:
-    Arena(Character* myHero);
-     Character* getNextOponent(int level);
+    Arena(Character *myHero);
+    Villain *getNextOponent(int level);
+    void fight(Character *hero, Villain *villain);
 };
 
-Arena::Arena(Character* myHero)
+Arena::Arena(Character *myHero)
 {
     this->hero = myHero;
     cout << "Welcome to the Arena!" << endl;
     cout << "You are at level ";
     cout << myHero->level;
-    cout << " out of 10"<<endl;
+    cout << " out of 10" << endl;
 }
 
- Character* Arena::getNextOponent(int level)
+void Arena::fight(Character *hero, Villain *villain)
 {
-    cout<<" || LEVEL "<< level << " || ";
+    int bonus = 0;
+    int hrHp = hero->getHp();
+    int vlHp = villain->getHpVl();
+    while (hrHp > 0 && vlHp > 0)
+    {
+        cout << "ATTACKING " << villain->getNameVl() << " WITH A " << hero->getWeapon()<<endl;
+        int hrDmg = hero->attack();
+        bonus+=1;
+        vlHp-=hrDmg;
+        sleep(1);
+        cout<<"|| "<<villain->getNameVl()<<" LOST "<<hrDmg<<" HEALTH POINTS ||"<<endl;
+        if(vlHp <= 0){
+            cout<< hero->getName() << " WON!"<<endl;
+            hero->level+=1;
+            // bonus based on how many rounds
+            hero->gold+=20 + bonus*2;
+            cout<<"YOU'VE GAINED "<< 20 + bonus*2<<endl<< " GOLD";
+            break;
+        }
+        cout<< villain->getNameVl()<< " is attacking you with a "<< villain->getWeaponVl()<<endl;
+        sleep(1);
+        int vlDmg = villain->attack();
+        hrHp-=vlDmg;
+        cout<<"|| YOU LOST "<<vlDmg<<" HEALTH POINTS ||\n"<<endl;
+        if(hrHp<=0){
+            cout<<"YOU LOST"<<endl;
+            cout<< villain->getNameVl() << " WON!"<<endl;
+            break;
+        }
+
+    }
+}
+
+Villain *Arena::getNextOponent(int level)
+{
+    cout << " || LEVEL " << level << " || ";
     if (level == 1)
     {
-        Character *n1 = new Character("GOBLIN");
-        n1->addWeapon(*new Weapon("GOBLIN SWORD", 20));
+        Villain *n1 = new Villain("GOBLIN");
+        n1->addWeaponVl(*new Weapon("GOBLIN SWORD", 15));
         return n1;
     }
     if (level == 2)
     {
-        Character *n2 = new Character("EVIL KNIGHT");
-        n2->addWeapon(*new Weapon("SWORD", 20));
+        Villain *n2 = new Villain("EVIL KNIGHT");
+        n2->addWeaponVl(*new Weapon("SWORD", 24));
         return n2;
     }
     if (level == 3)
     {
-        Character *n3 = new Character("GOBLIN");
-        n3->addWeapon(*new Weapon("SWORD", 20));
+        Villain *n3 = new Villain("BABY DRAGON");
+        n3->addWeaponVl(*new Weapon("DRAGON RAGE", 27));
         return n3;
     }
     if (level == 4)
     {
-        Character *n4 = new Character("GOBLIN");
-        n4->addWeapon(*new Weapon("SWORD", 20));
+        Villain *n4 = new Villain("GOLEN");
+        n4->addWeaponVl(*new Weapon("HEAVY PUNCH", 28));
         return n4;
     }
     if (level == 5)
     {
-        Character *n5 = new Character("GOBLIN");
-        n5->addWeapon(*new Weapon("SWORD", 20));
+        Villain *n5 = new Villain("BLACK DRAGON");
+        n5->addWeaponVl(*new Weapon("BLACK MAGIC", 30));
         return n5;
     }
+    return 0;
 }
 
 #endif

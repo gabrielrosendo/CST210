@@ -1,31 +1,44 @@
 #ifndef WEAPON_H
 #define WEAPON_H
 
+#include "Asset.h"
+#include "Character.h"
 #include <iostream>
+
 
 class Weapon
 {
 private:
     std::string name;
     int power;
+    int cost;
 public:
     Weapon() {}
-    Weapon(std::string, int);
+    Weapon(std::string str, int p, int c){
+        setName(str);
+        this->power=p;
+        this->cost=c;
+    }
+    Weapon(std::string str, int i){  
+    setName(str);
+    this->power = i;
+    }
     const std::string getName();
     int getPower();
+    int getCost();
     void setName(std::string);
 };
+
 
 int Weapon::getPower() {
     return this->power;
 }
 
-Weapon::Weapon(std::string str, int i)
-{
-    setName(str);
-    this->power = i;
-}
 
+
+int Weapon::getCost(){
+    return this->cost;
+}
 
 void Weapon::setName(std::string str)
 {
