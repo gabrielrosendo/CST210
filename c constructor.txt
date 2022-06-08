@@ -1,1 +1,0 @@
-C::C(int i, int j) {	setValue(i);	setCValue(j);}

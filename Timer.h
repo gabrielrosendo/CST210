@@ -1,1 +1,0 @@
-class Timer {Private:	int start_time;	int end_time;      void normalizeTime();Public: 	Timer();	void start();	void end();	int getElapsedTime();      const void showClock();}

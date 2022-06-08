@@ -1,1 +1,0 @@
-B::B(int i, int j) {	E(i);	Value4 = j;}

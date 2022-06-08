@@ -1,1 +1,0 @@
-A::~A() {	delete id;	delete name;}
