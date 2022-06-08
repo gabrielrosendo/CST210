@@ -11,21 +11,21 @@ private:
     int hp;
     std::string name;
 public:
-    Character() {}
     int level;
     int gold;
+    Character() {}
     Character(std::string);
     void setName(std::string);
     std::string getName();
-    void addWeapon(const Weapon &);
-    int attack();
     std::string getWeapon();
-    void takeDamage(int);
-    const void showHero();
     const int getHp();
     void setHp(int);
     void create();
     void increaseHp(int);
+    void takeDamage(int);
+    const void showHero();    
+    void addWeapon(const Weapon &);
+    int attack();
 };
 
 Character::Character(std::string str)
@@ -39,7 +39,7 @@ Character::Character(std::string str)
 }
 
 void Character::create() {
-    std::cout<<"Character created"<<std::endl;
+    std::cout<<"LOADING..."<<std::endl;
 }
 
 std::string Character::getWeapon()

@@ -1,5 +1,5 @@
-gabe
-KNIFE
-6
-88
-105
+Gabe
+KATANA
+4
+116
+110

@@ -13,11 +13,13 @@ private:
     int cost;
 public:
     Weapon() {}
+    // constructor for character weapon
     Weapon(std::string str, int p, int c){
         setName(str);
         this->power=p;
         this->cost=c;
     }
+    // constructor for villlain weapon
     Weapon(std::string str, int i){  
     setName(str);
     this->power = i;
